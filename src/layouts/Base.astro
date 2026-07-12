@@ -160,7 +160,12 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
       }
       .report-card h2 { margin: 0 0 8px; font-size: 22px; }
       .report-card .meta { color: var(--stone); font-family: system-ui, sans-serif; font-size: 13px; margin-bottom: 10px; }
+      .metric-pill {
+        display: inline-block; font-family: system-ui, sans-serif; font-size: 13px; font-weight: 600;
+        background: var(--ink-blue); color: #fff; padding: 3px 10px; border-radius: 20px; margin-bottom: 10px;
+      }
       .pro-badge { background: var(--ink-blue); color: #fff; font-family: system-ui, sans-serif; font-size: 11px; padding: 2px 8px; border-radius: 4px; margin-left: 8px; vertical-align: middle; }
+      .glossary-link { display: inline-block; margin: 8px 0 0; font-family: system-ui, sans-serif; font-size: 13px; color: var(--ink-blue); border-bottom: 1px dotted var(--ink-blue); }
       .article-body { font-size: 18px; line-height: 1.6; }
       .article-body blockquote { border-left: 4px solid var(--ink-blue); margin: 20px 0; padding: 6px 18px; color: var(--dark-warm); background: var(--ivory); }
       .article-body pre { background: var(--near-black); color: #f5f4ed; padding: 16px; border-radius: 8px; overflow: auto; font-family: 'JetBrains Mono', monospace; font-size: 14px; }

@@ -24,12 +24,15 @@ const keywords = ['투자리포트', '실전투자', 'AI투자', '포트폴리�
     <article class="report-card">
       <h2><a href={`/owl-marketbrief/reports/${r.id}/`}>{r.data.title}</a>{r.data.proOnly && <span class="pro-badge">PRO</span>}</h2>
       <div class="meta">{r.data.date} · {r.data.type}</div>
+      <span class="metric-pill">성과·리스크 공개</span>
       <p>{r.data.summary}</p>
       <div>
         {r.data.tags.map((t) => <span class="tag">{t}</span>)}
       </div>
     </article>
   ))}
+
+  <a class="glossary-link" href="https://herbpot.github.io/owl-marketbrief/glossary">📖 투자 용어집 보기</a>
 
   <!-- Pro CTA -->
   <section class="pro-cta">
