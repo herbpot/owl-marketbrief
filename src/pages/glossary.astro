@@ -1,49 +1,30 @@
 ---
-title: "투자 용어집"
-description: "OWL 마켓브리프에서 쓰는 투자·경제 전문용어를 쉽게 풀이합니다."
 import Base from '../layouts/Base.astro';
+
+const terms = [
+  { ko: '밸류업', en: 'Value-up', desc: '기업가치 제고 정책. 자사주 소각·배당 확대 등 주주환원을 유도해 코리아 디스카운트를 해소한다.' },
+  { ko: '코리아 디스카운트', en: 'Korea Discount', desc: '한국 증시가 펀더멘털 대비 낮게 평가받는 현상. 지배구조·주주환원 미흡이 원인으로 지목된다.' },
+  { ko: 'PBR', en: 'Price Book Ratio', desc: '주가순자산비율. 주가를 주당순자산가치로 나눈 값. 1.0 이하면 장부가치보다 싸게 거래됨.' },
+  { ko: 'CPI', en: 'Consumer Price Index', desc: '소비자물가지수. 인플레이션 측정의 핵심 지표로, 금리 정책에 직접적 영향을 준다.' },
+  { ko: 'FOMC', en: 'Federal Open Market Committee', desc: '미 연방공개시장위원회. 기준금리를 결정하는 연준의 핵심 의사결정 기구.' },
+  { ko: '알트 시즌', en: 'Alt Season', desc: '비트코인 외 알트코인이 시장을 주도하는 구간. 보통 BTC 도미넌스 하락과 동행한다.' },
+  { ko: '온체인', en: 'On-chain', desc: '블록체인 상에 기록된 실제 거래·보유 데이터를 분석해 시장 심리를 읽는 기법.' },
+  { ko: 'ETF', en: 'Exchange Traded Fund', desc: '상장지수펀드. 지수·원자재·비트코인 등을 추종하며 거래소에서 주식처럼 거래된다.' },
+  { ko: '자산배분', en: 'Asset Allocation', desc: '주식·채권·실물자산 간 비중 조절로 리스크를 분산하는 포트폴리오 전략.' },
+  { ko: '바벨 전략', en: 'Barbell Strategy', desc: '안전자산과 고위험자산에 극단적으로 비중을 두고 중위험 구간을 비우는 배분법.' },
+];
 ---
-
-<Base title="투자 용어집 — OWL 마켓브리프" description="투자·경제 전문용어 쉬운 풀이" keywords={["투자용어", "경제용어", "용어집"]} canonical="https://herbpot.github.io/owl-marketbrief/glossary">
-  <h1>📖 투자 용어집</h1>
-  <p class="lead">리포트에서 자주 나오는 용어를 쉽게 풀었습니다. 이해가 안 되는 단어가 있으면 언제든 돌아오세요.</p>
-
-  <section class="glossary">
-    <h2>시장·거시경제</h2>
+<Base title="투자 용어집">
+  <div class="gloss">
+    <h1>용어집</h1>
+    <p class="sub">리포트에 자주 등장하는 핵심 용어를 한 줄로 정리했습니다.</p>
     <dl>
-      <dt>FOMC</dt><dd>미국 연방공개시장위원회. 금리를 결정하는 기구로, 그 결과는 전 세계 시장에 영향을 줍니다.</dd>
-      <dt>KOSPI</dt><dd>한국 종합주가지수. 한국 주식시장 전체의 흐름을 보여주는 대표 지수입니다.</dd>
-      <dt>인플레이션</dt><dd>물가가 지속적으로 오르는 현상. 돈의 가치가 떨어집니다.</dd>
-      <dt>디플레이션</dt><dd>물가가 지속적으로 내리는 현상. 경기 침체 신호로 봅니다.</dd>
+      {terms.map((t) => (
+        <div class="term">
+          <dt>{t.ko}<span class="en">{t.en}</span></dt>
+          <dd>{t.desc}</dd>
+        </div>
+      ))}
     </dl>
-
-    <h2>리스크·통계</h2>
-    <dl>
-      <dt>VaR (Value at Risk)</dt><dd>신뢰수준 내에서 일정 기간 발생할 수 있는 최대 손실 추정치.</dd>
-      <dt>CVaR (조건부 VaR)</dt><dd>VaR을 넘는 극단적 손실의 평균. 꼬리 리스크를 보여줍니다.</dd>
-      <dt>Fat-tail (두꺼운 꼬리)</dt><dd>극단적 사건이 정상분포보다 자주 일어나는 성질.</dd>
-      <dt>코플라 (Copula)</dt><dd>여러 자산의 움직임이 서로 얼마나 연관되는지 보여주는 통계 기법.</dd>
-    </dl>
-
-    <h2>포트폴리오·투자</h2>
-    <dl>
-      <dt>포트폴리오</dt><dd>여러 자산(주식·채권·코인 등)을 섞어 만든 투자 구성을 말합니다.</dd>
-      <dt>리밸런싱</dt><dd>목표 비중으로 다시 맞추는 작업.</dd>
-      <dt>섹터 로테이션</dt><dd>경기 단계에 따라 유리한 업종으로 자금을 옮기는 전략.</dd>
-      <dt>알파 (Alpha)</dt><dd>시장 수익을 넘어 얻은 초과 수익.</dd>
-    </dl>
-
-    <h2>암호화폐</h2>
-    <dl>
-      <dt>온체인 (On-chain)</dt><dd>블록체인상에서 실제 일어난 거래 데이터.</dd>
-      <dt>스테이블코인</dt><dd>달러 등 법정화폐에 가치를 고정한 코인.</dd>
-    </dl>
-  </section>
-
-  <style>
-    .glossary dl { margin: 0 0 28px; }
-    .glossary dt { font-weight: 600; color: var(--ink-blue); font-family: system-ui, sans-serif; font-size: 16px; margin-top: 16px; }
-    .glossary dd { margin: 4px 0 0; color: var(--dark-warm); font-size: 15px; line-height: 1.6; }
-    .glossary h2 { font-size: 20px; margin: 28px 0 8px; color: var(--ink-blue); }
-  </style>
+  </div>
 </Base>

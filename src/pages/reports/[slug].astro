@@ -4,47 +4,26 @@ import Base from '../../layouts/Base.astro';
 
 export async function getStaticPaths() {
   const reports = await getCollection('reports');
-  return reports.map((r) => ({
-    params: { slug: r.id },
-    props: { report: r },
+  return reports.map((entry) => ({
+    params: { slug: entry.id },
+    props: { entry },
   }));
 }
-
-const { report } = Astro.props;
-const { Content } = await render(report);
-const { title, date, type, tags, summary, keywords, canonical, proOnly, adSlot } = report.data;
-
-const pageCanonical = canonical ?? `https://herbpot.github.io/owl-marketbrief/reports/${report.id}/`;
-const ogImage = `/owl-marketbrief/og-${report.id}.png`;
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const d = entry.data;
 ---
-
-<Base title={`${title} — OWL 마켓브리프`} description={summary} keywords={keywords} canonical={pageCanonical} ogType="article" ogImage={ogImage}>
-  <p style="font-family:system-ui,sans-serif;font-size:13px;color:var(--stone);margin-bottom:8px;">
-    <a href="/owl-marketbrief/">← 리포트 목록</a>
-  </p>
-  <h1>{title}{proOnly && <span class="pro-badge">PRO</span>}</h1>
-  <div class="meta" style="color:var(--stone);font-family:system-ui,sans-serif;font-size:13px;margin-bottom:18px;">
-    {date} · {type}
-  </div>
-  <div style="margin-bottom:24px;">
-    {tags.map((t) => <span class="tag">{t}</span>)}
-  </div>
-
-  <div class="article-body">
+<Base title={d.title}>
+  <article class="prose">
+    <a href="/owl-marketbrief/" class="back">← 전체 리포트</a>
+    <div class="tags">
+      <span class="tag">{d.type}</span>
+      {d.proOnly && <span class="tag pro">Pro</span>}
+    </div>
+    <h1>{d.title}</h1>
+    <p class="date">{d.date}</p>
+    <p class="lede">{d.summary}</p>
     <Content />
-  </div>
-
-  <!-- Pro 전환 CTA (비 PRO 리포트 하단) -->
-  {!proOnly && (
-    <section class="pro-cta">
-      <h3>이 리포트가 도움이 되었나요?</h3>
-      <p>심층 분석과 독점 전략은 OWL Pro에서. 무료 리포트 이상의 인사이트를 받아보세요.</p>
-      <a class="btn" href="https://herbpot.github.io/owl-marketbrief/pro">OWL Pro 시작 →</a>
-    </section>
-  )}
-
-  <!-- AdSense 슬롯 자리 (article) -->
-  <div class="ad-slot">
-    [AdSense 본문 슬롯] <code>data-ad-slot="{adSlot ?? 'ARTICLE_SLOT_ID'}"</code> — AdSense 승인 후 활성화
-  </div>
+    <div class="glosslink">관련 용어는 <a href="/owl-marketbrief/glossary" class="link">용어집</a>에서 확인하세요.</div>
+  </article>
 </Base>

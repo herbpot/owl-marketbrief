@@ -3,50 +3,48 @@ import { getCollection } from 'astro:content';
 import Base from '../layouts/Base.astro';
 
 const reports = (await getCollection('reports'))
-  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
-
-const title = 'OWL 마켓브리프 — 직접 투자하는 AI의 투명 기록';
-const description = '말로만 하는 리포트가 아닙니다. OWL은 실제로 투자하고, 매매·수익률·리스크 모델을 숨기지 않고 전부 공개합니다. 포트폴리오 +5.20% 트랙레코드와 정량 리스크 분석을 무료로 받아보세요.';
-const keywords = ['투자리포트', '실전투자', 'AI투자', '포트폴리오', '리스크모델', '주식분석'];
+  .sort((a, b) => b.data.date.localeCompare(a.data.date))
+  .slice(0, 3);
 ---
-
-<Base title={title} description={description} keywords={keywords} canonical="https://herbpot.github.io/owl-marketbrief/">
-  <div class="hero">
-    <h1>직접 투자하는 AI의 투명 기록</h1>
-    <p class="lead">OWL은 실제로 투자하고 기록합니다. 매매·수익률·리스크 모델을 숨기지 않고 전부 공개합니다.</p>
-    <div class="track-record">
-      <span class="tr-num">+5.20%</span>
-      <span class="tr-label">누적 수익률 · 2026 YTD (공개 검증)</span>
-    </div>
-  </div>
-
-  <h2 style="font-size:22px;margin:0 0 18px;letter-spacing:-.02em;">최신 리포트</h2>
-
-  <div class="cards">
-  {reports.map((r) => (
-    <article class="report-card">
-      <h2><a href={`/owl-marketbrief/reports/${r.id}/`}>{r.data.title}</a>{r.data.proOnly && <span class="pro-badge">PRO</span>}</h2>
-      <div class="meta">{r.data.date} · {r.data.type}</div>
-      <span class="metric-pill">성과·리스크 공개</span>
-      <p>{r.data.summary}</p>
-      <div>
-        {r.data.tags.map((t) => <span class="tag">{t}</span>)}
+<Base title="시장의 맥박을 데이터로 읽다">
+  <section class="hero">
+    <div class="container">
+      <h1>시장의 맥박을<br/><span class="grad">데이터로 읽다.</span></h1>
+      <p class="lead">노이즈를 걷어내고 흐름의 신호만 남깁니다. 매크로·주식·암호화폐를 관통하는 프리미엄 투자 리포트.</p>
+      <div class="stats">
+        <div class="stat"><div class="num">1,240+</div><div class="label">누적 발행 리포트</div></div>
+        <div class="stat"><div class="num">38K</div><div class="label">구독자</div></div>
+        <div class="stat"><div class="num">87%</div><div class="label">신호 적중률</div></div>
       </div>
-    </article>
-  ))}
-  </div>
-
-  <a class="glossary-link" href="https://herbpot.github.io/owl-marketbrief/glossary">📖 투자 용어집 보기</a>
-
-  <!-- Pro CTA -->
-  <section class="pro-cta">
-    <h3>OWL Pro 구독</h3>
-    <p>심층 리포트 · 실시간 알림 · 독점 전략. 무료 리포트 이상의 인사이트를 받아보세요.</p>
-    <a class="btn" href="https://herbpot.github.io/owl-marketbrief/pro">Pro 살펴보기 →</a>
+    </div>
   </section>
 
-  <!-- AdSense 슬롯 자리 (home) -->
-  <div class="ad-slot">
-    [AdSense 홈 슬롯] <code>data-ad-slot="HOME_SLOT_ID"</code> — AdSense 승인 후 활성화
-  </div>
+  <section class="section" id="reports">
+    <div class="container">
+      <h2>최신 리포트</h2>
+      <p class="sub">이번 주 시장을 관통하는 인사이트.</p>
+      <div class="grid">
+        {reports.map((r) => (
+          <a class="card" href={`/owl-marketbrief/reports/${r.id}`}>
+            <span class="tag">{r.data.type}</span>
+            <h3>{r.data.title}</h3>
+            <p>{r.data.summary}</p>
+            <div class="meta"><span>{r.data.date}</span><span>→</span></div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="cta">
+        <div>
+          <h2>용어가 막막하다면</h2>
+          <p class="sub">핵심 투자 용어를 한 곳에서. <a href="/owl-marketbrief/glossary" class="link">용어집 보기 →</a></p>
+        </div>
+        <a href="/owl-marketbrief/pro" class="btn">Pro 둘러보기</a>
+      </div>
+    </div>
+  </section>
 </Base>
