@@ -1,0 +1,18 @@
+{
+  "name": "owl-marketbrief",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "OWL 마켓브리프 — 투자·경제 리포트 구독 (GitHub Pages SEO 사이트)",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.5.0",
+    "@astrojs/sitemap": "^3.2.1"
+  }
+}

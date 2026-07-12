@@ -1,0 +1,56 @@
+# ============================================================
+# sync-reports.yml — 옵시디언/크론 repo 에서 리포트 동기화
+# ============================================================
+# 상태: 비활성화 (DISABLED)
+#
+# 이 워크플로우는 매일 06:00 KST(21:00 UTC 전일) 에 finance 프로필이
+# 생산한 마크다운 리포트를 소스 repo(src/content/reports)로 동기화하고
+# main 브랜치에 커밋 → deploy.yml 이 빌드/배포합니다.
+#
+# [연결 전 필요 사항]
+#   1. GH_PAT 시크릿 등록 (repo + workflow 권한) — Settings > Secrets > Actions
+#      예: HERBPOT_PAT
+#   2. 소스 repo (옵시디언/크론) 변수 지정: SOURCE_REPO
+#   3. 아래 `if: false` 라인을 제거하고 주석을 풀 것.
+#
+# 아래 cron 은 KST 06:00 = UTC 21:00 (전일) 입니다.
+# ============================================================
+
+name: Sync Reports (disabled)
+
+on:
+  schedule:
+    - cron: "0 21 * * *"
+  workflow_dispatch:
+
+# if: false  # ← 활성화하려면 이 줄을 삭제하세요
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    # if: false  # 비활성화 스위치 — 삭제 시 활성화됨
+    steps:
+      - name: Checkout site repo
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.HERBPOT_PAT }}
+
+      - name: Pull reports from source repo
+        env:
+          GH_PAT: ${{ secrets.HERBPOT_PAT }}
+          SOURCE_REPO: ${{ vars.SOURCE_REPO }}
+        run: |
+          echo "GH_PAT / SOURCE_REPO 가 설정되면 여기서 소스 repo 의 리포트를"
+          echo "src/content/reports 로 복사하는 로직을 수행합니다."
+          echo "현재는 비활성화 상태입니다."
+
+      - name: Commit & push (if changed)
+        run: |
+          git config user.name "owl-bot"
+          git config user.email "owl@herbpot.github.io"
+          git add -A
+          git diff --cached --quiet || git commit -m "chore: sync reports [skip ci]"
+          git push

@@ -1,0 +1,41 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../layouts/Base.astro';
+
+const reports = (await getCollection('reports'))
+  .sort((a, b) => (a.data.date < b.data.date ? 1 : -1));
+
+const title = 'OWL 마켓브리프 — 투자·경제 리포트';
+const description = '매일 아침 시장을 읽는 투자·경제 리포트. 거시경제, 주식, 암호화폐, 원자재 전략을 무료로 구독하세요.';
+const keywords = ['투자리포트', '경제뉴스', '마켓브리프', '주식분석', '거시경제', '암호화폐'];
+---
+
+<Base title={title} description={description} keywords={keywords} canonical="https://herbpot.github.io/owl-marketbrief/">
+  <h1>🦉 OWL 마켓브리프</h1>
+  <p class="lead">매일 아침 시장을 읽는 투자·경제 리포트. 거시경제 · 주식 · 암호화폐 · 원자재 전략을 무료로 받아보세요.</p>
+
+  <h2 style="font-size:24px;margin:32px 0 16px;">최신 리포트</h2>
+
+  {reports.map((r) => (
+    <article class="report-card">
+      <h2><a href={`/owl-marketbrief/reports/${r.slug}/`}>{r.data.title}</a>{r.data.proOnly && <span class="pro-badge">PRO</span>}</h2>
+      <div class="meta">{r.data.date} · {r.data.type}</div>
+      <p>{r.data.summary}</p>
+      <div>
+        {r.data.tags.map((t) => <span class="tag">{t}</span>)}
+      </div>
+    </article>
+  ))}
+
+  <!-- Pro CTA -->
+  <section class="pro-cta">
+    <h3>OWL Pro 구독</h3>
+    <p>심층 리포트 · 실시간 알림 · 독점 전략. 무료 리포트 이상의 인사이트를 받아보세요.</p>
+    <a class="btn" href="https://herbpot.github.io/owl-marketbrief/pro">Pro 살펴보기 →</a>
+  </section>
+
+  <!-- AdSense 슬롯 자리 (home) -->
+  <div class="ad-slot">
+    [AdSense 홈 슬롯] <code>data-ad-slot="HOME_SLOT_ID"</code> — AdSense 승인 후 활성화
+  </div>
+</Base>
