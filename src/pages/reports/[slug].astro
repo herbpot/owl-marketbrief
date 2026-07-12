@@ -5,7 +5,7 @@ import Base from '../../layouts/Base.astro';
 export async function getStaticPaths() {
   const reports = await getCollection('reports');
   return reports.map((r) => ({
-    params: { slug: r.slug },
+    params: { slug: r.id },
     props: { report: r },
   }));
 }
@@ -14,8 +14,8 @@ const { report } = Astro.props;
 const { Content } = await render(report);
 const { title, date, type, tags, summary, keywords, canonical, proOnly, adSlot } = report.data;
 
-const pageCanonical = canonical ?? `https://herbpot.github.io/owl-marketbrief/reports/${report.slug}/`;
-const ogImage = `/owl-marketbrief/og-${report.slug}.png`;
+const pageCanonical = canonical ?? `https://herbpot.github.io/owl-marketbrief/reports/${report.id}/`;
+const ogImage = `/owl-marketbrief/og-${report.id}.png`;
 ---
 
 <Base title={`${title} — OWL 마켓브리프`} description={summary} keywords={keywords} canonical={pageCanonical} ogType="article" ogImage={ogImage}>
