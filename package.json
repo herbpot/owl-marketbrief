@@ -1,9 +1,9 @@
 {
-  "name": "marketone",
+  "name": "heureum",
   "type": "module",
   "version": "1.0.0",
   "private": true,
-  "description": "마킷원 (MARKETONE) — 시장의 맥박을 데이터로 읽는 프리미엄 투자 리포트 (GitHub Pages 사이트)",
+  "description": "흐름 (HEUREUM) — 시장의 맥박을 데이터로 읽는 프리미엄 투자 리포트 (GitHub Pages 사이트)",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
