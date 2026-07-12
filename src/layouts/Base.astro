@@ -105,6 +105,31 @@ const fullOgImage = ogImage.startsWith('http') ? ogImage : `${siteUrl}${ogImage}
         font-family: system-ui, sans-serif; font-size: 12px; font-weight: 500;
         padding: 3px 10px; border-radius: 4px; margin: 0 6px 6px 0;
       }
+      .track-record {
+        display: flex; align-items: baseline; gap: 12px;
+        background: var(--ivory); border: 1px solid var(--warm-sand);
+        border-left: 4px solid var(--ink-blue); border-radius: 8px;
+        padding: 14px 18px; margin: 0 0 24px;
+      }
+      .tr-num { font-family: Georgia, Charter, serif; font-size: 28px; font-weight: 500; color: var(--ink-blue); font-variant-numeric: tabular-nums; }
+      .tr-label { font-family: system-ui, sans-serif; font-size: 13px; color: var(--olive); }
+      .term { border-bottom: 1px dotted var(--ink-blue); cursor: help; color: var(--ink-blue); position: relative; }
+      .term:hover::after {
+        content: attr(data-tip); position: absolute; left: 0; top: 100%;
+        background: var(--near-black); color: var(--parchment);
+        font-family: system-ui, sans-serif; font-size: 12px; line-height: 1.4;
+        padding: 6px 10px; border-radius: 6px; max-width: 240px; margin-top: 4px; z-index: 10;
+        white-space: normal;
+      }
+      @media (max-width: 600px) {
+        h1 { font-size: 28px; }
+        .wrap { padding: 0 16px; }
+        .report-card { padding: 18px 16px; }
+        .nav a { font-size: 14px; padding: 10px 0; display: inline-block; min-height: 44px; }
+        .brand { font-size: 18px; }
+        .lead { font-size: 17px; }
+        .tr-num { font-size: 24px; }
+      }
       .pro-cta {
         background: var(--ink-blue); color: #fff; border-radius: 10px;
         padding: 24px; margin: 36px 0; text-align: center;
