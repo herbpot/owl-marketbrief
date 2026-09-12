@@ -62,3 +62,7 @@ cross-profile: false
 - 실제 broker/order API 없음
 
 ⚠️ 본 기록은 가상투자 시뮬레이션이며 투자 권유가 아닙니다.
+
+## 시뮬레이션 연속선
+- [[wiki/economics/OWL-시뮬레이션-포트폴리오|OWL 시뮬레이션 포트폴리오]] — 포트폴리오 상태 허브
+- [[wiki/economics/daily/2026-09-09-owl-주식-시뮬레이션-일일-리포트|2026-09-09 일일 리포트]] — 직전 기록
