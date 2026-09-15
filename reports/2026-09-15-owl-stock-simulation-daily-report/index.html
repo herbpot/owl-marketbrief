@@ -1,0 +1,94 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="google-site-verification" content="ikP9CTcvwYjBE3N2VYLqXsWU5bl6eGFanUXhI8Ia4mw"><title>OWL 주식 시뮬레이션 일일 리포트 · 흐름</title><meta name="description" content="시장의 맥박을 데이터로 읽는 프리미엄 투자 리포트"><meta property="og:site_name" content="흐름"><link rel="icon" type="image/svg+xml" href="/owl-marketbrief/favicon.svg"><link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><link rel="stylesheet" href="/owl-marketbrief/_astro/glossary.oRBVZEgI.css"></head> <body> <header class="site-header"> <div class="container header-inner"> <a href="/owl-marketbrief/" class="wordmark"> <span class="wm-ko">흐름</span> <span class="wm-en">HEUREUM</span> </a> <nav class="nav"> <a href="/owl-marketbrief/#reports">리포트</a> <a href="/owl-marketbrief/glossary">용어집</a> <a href="/owl-marketbrief/pro" class="nav-pro">Pro</a> </nav> </div> </header> <main>  <article class="prose"> <a href="/owl-marketbrief/" class="back">← 전체 리포트</a> <div class="tags"> <span class="tag">daily</span>  </div> <h1>OWL 주식 시뮬레이션 일일 리포트</h1> <p class="date">2026-09-15</p> <p class="lede">2026-09-15 Naver 마감 데이터 기반 paper 포트폴리오: 총 1,025,160원, 누적 +2.52%</p> <h1 id="-owl-주식-시뮬레이션-일일-리포트">📊 OWL 주식 시뮬레이션 일일 리포트</h1>
+<p>📅 <strong>2026-09-15</strong> · PAPER ONLY · 실제 주문 없음</p>
+<h2 id="시장-마감">시장 마감</h2>
+<ul>
+<li>KOSPI: <strong>6,627.26</strong> (-0.85%)</li>
+<li>KOSDAQ: <strong>812.41</strong> (+0.70%)</li>
+<li>USD/KRW: <strong>1,359.90원</strong></li>
+<li>Source: Naver Finance (<code>m.stock.naver.com</code>), 거래일 일치 검증 완료</li>
+</ul>
+<h2 id="포트폴리오">포트폴리오</h2>
+<ul>
+<li>시작자산: 1,000,000원</li>
+<li>현재가치: <strong>1,025,160원</strong></li>
+<li>누적손익: <strong>+25,160원 (+2.52%)</strong></li>
+<li>현금: 200,460원 (19.55%)</li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>종목</th><th align="right">수량</th><th align="right">현재가</th><th align="right">일간</th><th align="right">매수가</th><th align="right">손익률</th><th>섹터</th></tr></thead><tbody><tr><td>신한지주</td><td align="right">1</td><td align="right">111,900원</td><td align="right">-2.36%</td><td align="right">97,100원</td><td align="right">+15.24%</td><td>금융</td></tr><tr><td>HD한국조선해양</td><td align="right">1</td><td align="right">340,000원</td><td align="right">-6.46%</td><td align="right">341,500원</td><td align="right">-0.44%</td><td>조선/중공업</td></tr><tr><td>삼성전자</td><td align="right">1</td><td align="right">250,500원</td><td align="right">+0.60%</td><td align="right">257,000원</td><td align="right">-2.53%</td><td>반도체/IT</td></tr><tr><td>기아</td><td align="right">1</td><td align="right">122,300원</td><td align="right">-1.53%</td><td align="right">124,400원</td><td align="right">-1.69%</td><td>자동차</td></tr></tbody></table>
+<h2 id="오늘의-paper-거래">오늘의 paper 거래</h2>
+<ul>
+<li><strong>매매 없음 — 홀딩</strong></li>
+</ul>
+<h2 id="규칙-검증">규칙 검증</h2>
+<ul>
+<li>손절 -15%: False</li>
+<li>익절 +20%: False</li>
+<li>익절 +30%: False</li>
+<li>종목 비중 40% 초과: False</li>
+<li>현금 10% 미만: False</li>
+</ul>
+<h2 id="엔진-상태">엔진 상태</h2>
+<ul>
+<li><code>owl_simulation_daily.py</code> 결정론적 코어</li>
+<li>승인 유니버스 5종목만 -5% 과매도 신규매수 후보로 사용</li>
+<li>거래일·CLOSE 상태 불일치 시 <strong>쓰기 전 실패(fail-closed)</strong></li>
+<li>동일 날짜 재실행은 trade 중복 금지</li>
+<li>실제 broker/order API 없음</li>
+</ul>
+<p>⚠️ 본 기록은 가상투자 시뮬레이션이며 투자 권유가 아닙니다.</p>
+<h2 id="관련-노트">관련 노트</h2>
+<!-- wiki-auto-link:start -->
+<p>[[2026-09-11-owl-stock-simulation-daily-report]]
+[[2026-09-07-owl-weekly-rebalance]]
+[[510-lesson-510]]</p>
+<!-- wiki-auto-link:end --> <div class="glosslink">관련 용어는 <a href="/owl-marketbrief/glossary" class="link">용어집</a>에서 확인하세요.</div> </article>  </main> <footer class="site-footer"> <div class="container"> <span class="wm-ko">흐름</span> <p>본 사이트의 투자 정보는 참고용이며, 투자 결정과 그에 따른 책임은 투자자 본인에게 있습니다.</p> </div> </footer> </body></html>
