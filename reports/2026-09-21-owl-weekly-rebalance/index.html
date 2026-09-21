@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="ko"> <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="google-site-verification" content="ikP9CTcvwYjBE3N2VYLqXsWU5bl6eGFanUXhI8Ia4mw"><title>OWL 주식 시뮬레이션 주간 리밸런싱 · 흐름</title><meta name="description" content="시장의 맥박을 데이터로 읽는 프리미엄 투자 리포트"><meta property="og:site_name" content="흐름"><link rel="icon" type="image/svg+xml" href="/owl-marketbrief/favicon.svg"><link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css"><link rel="stylesheet" href="/owl-marketbrief/_astro/glossary.oRBVZEgI.css"></head> <body> <header class="site-header"> <div class="container header-inner"> <a href="/owl-marketbrief/" class="wordmark"> <span class="wm-ko">흐름</span> <span class="wm-en">HEUREUM</span> </a> <nav class="nav"> <a href="/owl-marketbrief/#reports">리포트</a> <a href="/owl-marketbrief/glossary">용어집</a> <a href="/owl-marketbrief/pro" class="nav-pro">Pro</a> </nav> </div> </header> <main>  <article class="prose"> <a href="/owl-marketbrief/" class="back">← 전체 리포트</a> <div class="tags"> <span class="tag">weekly</span>  </div> <h1>OWL 주식 시뮬레이션 주간 리밸런싱</h1> <p class="date">2026-09-21</p> <p class="lede">2026-09-14~2026-09-21 paper 포트폴리오 주간 +2.19%, 현재 1,047,560원</p> <h1 id="-owl-주식-시뮬레이션-주간-리밸런싱">📊 OWL 주식 시뮬레이션 주간 리밸런싱</h1>
+<p>📅 <strong>2026-09-14 ~ 2026-09-21</strong> · PAPER ONLY · 실제 주문 없음</p>
+<h2 id="주간-성과">주간 성과</h2>
+<ul>
+<li>시작 NAV: 1,025,160원 (2026-09-15)</li>
+<li>현재 NAV: <strong>1,047,560원</strong> (2026-09-21)</li>
+<li>주간 수익률: <strong>+2.19%</strong></li>
+<li>KOSPI 구간 수익률: +5.74%</li>
+<li>KOSDAQ 구간 수익률: +2.94%</li>
+<li>베스트 공통 보유종목: 삼성전자 (+9.78%)</li>
+<li>워스트 공통 보유종목: 기아 (-1.55%)</li>
+</ul>
+<h2 id="리밸런싱-판정">리밸런싱 판정</h2>
+<ul>
+<li>시장 regime: <strong>강세장 — 성장주 비중 확대 검토</strong></li>
+<li>현금 10% 이상: <strong>True</strong> (19.14%)</li>
+<li>섹터 수: <strong>4</strong> (금융, 반도체/IT, 자동차, 조선/중공업)</li>
+<li>40% 초과 종목: <strong>없음</strong></li>
+<li>일일 엔진 손절/익절/현금 트리거 상태: <code>{"cash_below_10pct": false, "stop_loss_minus15": false, "take_profit_plus20": false, "take_profit_plus30": false, "weight_over_40pct": false}</code></li>
+</ul>
+<h2 id="월요일-일일-엔진에서-실행된-paper-거래">월요일 일일 엔진에서 실행된 paper 거래</h2>
+<ul>
+<li><strong>없음 — 주간 job은 중복매매를 하지 않음</strong></li>
+</ul>
+<h2 id="현재-포트폴리오">현재 포트폴리오</h2>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<table><thead><tr><th>종목</th><th align="right">수량</th><th align="right">현재가</th><th align="right">손익률</th><th align="right">비중</th><th>섹터</th></tr></thead><tbody><tr><td>신한지주</td><td align="right">1</td><td align="right">113,200원</td><td align="right">+16.58%</td><td align="right">10.81%</td><td>금융</td></tr><tr><td>HD한국조선해양</td><td align="right">1</td><td align="right">338,500원</td><td align="right">-0.88%</td><td align="right">32.31%</td><td>조선/중공업</td></tr><tr><td>삼성전자</td><td align="right">1</td><td align="right">275,000원</td><td align="right">+7.00%</td><td align="right">26.25%</td><td>반도체/IT</td></tr><tr><td>기아</td><td align="right">1</td><td align="right">120,400원</td><td align="right">-3.22%</td><td align="right">11.49%</td><td>자동차</td></tr></tbody></table>
+<h2 id="엔진-정책">엔진 정책</h2>
+<ul>
+<li>매매 state mutation은 <code>owl_simulation_daily.py</code> 단일 소유</li>
+<li>주간 job은 verified snapshot 집계/감사/report만 수행</li>
+<li>월요일 일일 job 완료 전에는 fail-closed</li>
+<li>broker/order API 없음</li>
+</ul>
+<p>⚠️ 가상투자 시뮬레이션이며 투자 권유가 아닙니다.</p>
+<h2 id="관련-노트">관련 노트</h2>
+<!-- wiki-auto-link:start -->
+<p>[[2026-09-07-owl-weekly-rebalance]]
+[[2026-09-11-owl-stock-simulation-daily-report]]
+[[2026-09-15-owl-stock-simulation-daily-report]]</p>
+<!-- wiki-auto-link:end --> <div class="glosslink">관련 용어는 <a href="/owl-marketbrief/glossary" class="link">용어집</a>에서 확인하세요.</div> </article>  </main> <footer class="site-footer"> <div class="container"> <span class="wm-ko">흐름</span> <p>본 사이트의 투자 정보는 참고용이며, 투자 결정과 그에 따른 책임은 투자자 본인에게 있습니다.</p> </div> </footer> </body></html>
