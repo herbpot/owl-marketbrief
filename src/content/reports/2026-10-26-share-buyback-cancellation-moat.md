@@ -35,3 +35,11 @@ cross-profile: false
 
 - **액션: 분기보고서·IR 자료에서 '자사주 소각 확정일·수량·차기 재원(자회사 배당/FCF)' 3가지만 체크하라**  
   매입 발표만 믿고 사지 말고, **소각 완료(변경상장) 공시**와 **차기 사이클 재원(자회사 배당·잉여현금흐름·신용등급 유지)**까지 확인된 기업만 '플라이휠 완성'으로 분류해 보유/비중 확대한다.
+
+## 관련 노트
+
+<!-- wiki-auto-link:start -->
+[[finance-2026-07-14-dart-pro-holding-disclosures]]
+[[2026-07-14-dart-pro-holding-disclosures]]
+[[2026-08-04-dart-pro-brief]]
+<!-- wiki-auto-link:end -->

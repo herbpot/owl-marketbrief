@@ -58,3 +58,11 @@ cross-profile: false
 - broker/order API 없음
 
 ⚠️ 가상투자 시뮬레이션이며 투자 권유가 아닙니다.
+
+## 관련 노트
+
+<!-- wiki-auto-link:start -->
+[[2026-09-07-owl-weekly-rebalance]]
+[[2026-09-21-owl-weekly-rebalance]]
+[[2026-09-28-owl-weekly-rebalance]]
+<!-- wiki-auto-link:end -->

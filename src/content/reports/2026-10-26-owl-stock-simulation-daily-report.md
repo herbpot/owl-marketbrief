@@ -60,3 +60,11 @@ cross-profile: false
 - 실제 broker/order API 없음
 
 ⚠️ 본 기록은 가상투자 시뮬레이션이며 투자 권유가 아닙니다.
+
+## 관련 노트
+
+<!-- wiki-auto-link:start -->
+[[2026-09-11-owl-stock-simulation-daily-report]]
+[[2026-09-15-owl-stock-simulation-daily-report]]
+[[2026-09-16-owl-stock-simulation-daily-report]]
+<!-- wiki-auto-link:end -->
